@@ -13,7 +13,7 @@ CREATE TABLE Products (
     type VARCHAR(50) CHECK (type IN ('Electronics', 'Clothing'))
 );
 
--- Electronics table (subclass of Product)
+
 CREATE TABLE Electronics (
     productId INT PRIMARY KEY,
     brand VARCHAR(255),
@@ -21,7 +21,7 @@ CREATE TABLE Electronics (
     FOREIGN KEY (productId) REFERENCES Products(productId)
 );
 
--- Clothing table (subclass of Product)
+
 CREATE TABLE Clothing (
     productId INT PRIMARY KEY,
     size VARCHAR(50),
@@ -29,7 +29,7 @@ CREATE TABLE Clothing (
     FOREIGN KEY (productId) REFERENCES Products(productId)
 );
 
--- User table
+
 CREATE TABLE Users (
     userId INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(255),
